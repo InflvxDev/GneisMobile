@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="gneis">
+        <ion-buttons slot="start">
+            <ion-buttons>
+                <ion-menu-button color="light" menu="first"></ion-menu-button>
+            </ion-buttons>
+        </ion-buttons>
+        <ion-title style="text-align: center; color: white; font-family: 'emily'">GNEIS</ion-title>
+        <ion-avatar slot="end">
+            <img src="/assets/stan.jpg">
+        </ion-avatar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true ">
+    <ion-card>
+        <ion-img src="/assets/hotel.jpg"></ion-img>
+
+        <ion-card-content>
+            <ion-title color="gneis" style="text-align: center; font-family: 'emily'">¿PARA QUE SIRVE?</ion-title>
+
+        </ion-card-content>
+        <p style="text-align: center;font-family: 'emily'">El Aplicativo Tiene como principal objetivo Ofrecer a los empleados del hotel una manera práctica y eficaz de realizar las reservaciones e incluso Podrán gestionar sus clientes así como las habitaciones o el catálogo de productos que el hotel
+            puede ofrecer a quienes se hospedan en el.</p>
+        <ion-img src="/assets/travel.svg"></ion-img>
+    </ion-card>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button color="gneis">
+            <ion-icon color="light" name="share-social-outline"></ion-icon>
+        </ion-fab-button>
+
+        <ion-fab-list side="start">
+            <ion-fab-button color="whatsapp">
+                <ion-icon color="light" name="logo-whatsapp"></ion-icon>
+
+            </ion-fab-button>
+            <ion-fab-button color="youtube">
+                <ion-icon name="logo-youtube"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button color="facebook">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+</ion-content>
+
+<ion-footer [translucent]="true">
+    <ion-toolbar color="gneis">
+        <p slot="end" style="color: white; font-family: 'emily';  padding-right: 10px;">v0.1</p>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="gneis">
+        <ion-buttons slot="start">
+            <ion-back-button color="light" defaultHref='/'></ion-back-button>
+        </ion-buttons>
+        <ion-title style="text-align: center; color: white; font-family: 'emily'">CLIENTES</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-img src="/assets/cliente.svg" style="width: 200px; height: 200px; display:block;margin:auto;"></ion-img>
+
+    <form #formulario="ngForm" (ngSubmit)="addcliente()">
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Cedula: </ion-label>
+            <ion-input type="number" placeholder="1192729904" [(ngModel)]="cliente.cedula" name="cedula" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Nombre: </ion-label>
+            <ion-input type="text" placeholder="Sebastian ochoa" [(ngModel)]="cliente.nombre" name="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-grid fixed>
+            <ion-row>
+                <ion-col size="4">
+                    <ion-item>
+                        <ion-label position="floating" style="font-family: 'emily';">Edad: </ion-label>
+                        <ion-input type="number" placeholder="18" [(ngModel)]="cliente.edad" name="edad" required></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="8">
+                    <ion-item>
+                        <ion-label position="floating" style="font-family: 'emily';">Genero: </ion-label>
+                        <ion-select [(ngModel)]="cliente.sexo" name="sexo" required>
+                            <ion-select-option>Femenino</ion-select-option>
+                            <ion-select-option>Masculino</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Correo: </ion-label>
+            <ion-input type="text" placeholder="seochoa@hotmail.com" [(ngModel)]="cliente.correo" name="correo" required></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Telefono: </ion-label>
+            <ion-input type="number" placeholder="3135360339" [(ngModel)]="cliente.telefono" name="telefono" required></ion-input>
+        </ion-item>
+
+
+        <ion-button color="gneis" type="submit" [disabled]="formulario.invalid" shape="round" expand="block">
+            <ion-label color="light" style="font-family: 'emily';">Registrar</ion-label>
+        </ion-button>
+
+
+    </form>
+</ion-content>

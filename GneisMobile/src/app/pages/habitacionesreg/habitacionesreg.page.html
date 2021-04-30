@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="gneis">
+        <ion-buttons slot="start">
+            <ion-back-button color="light" defaultHref='/'></ion-back-button>
+        </ion-buttons>
+        <ion-title style="text-align: center; color: white; font-family: 'emily'">HABITACIONES</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-img src="/assets/habitacion.svg" style="width: 200px; height: 200px; display:block;margin:auto;"></ion-img>
+
+    <form #formulario="ngForm" (ngSubmit)="addhabitacion()">
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">IDHabitacion: </ion-label>
+            <ion-input type="text" placeholder="H1" [(ngModel)]="habitacion.idhabitacion" name="idhabitacion" required></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Type: </ion-label>
+            <ion-select [(ngModel)]="habitacion.type" name="type" required>
+                <ion-select-option>Simple</ion-select-option>
+                <ion-select-option>Doble</ion-select-option>
+                <ion-select-option>Triple</ion-select-option>
+                <ion-select-option>Familiar</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating" style="font-family: 'emily';">Costo: </ion-label>
+            <ion-input type="number" placeholder="100000" [(ngModel)]="habitacion.costo" name="costo" required></ion-input>
+        </ion-item>
+
+
+        <ion-button color="gneis" type="submit" [disabled]="formulario.invalid" shape="round" expand="block">
+            <ion-label color="light" style="font-family: 'emily';">Registrar</ion-label>
+        </ion-button>
+
+
+    </form>
+</ion-content>

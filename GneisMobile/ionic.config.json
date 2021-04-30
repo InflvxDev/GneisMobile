@@ -1,0 +1,7 @@
+{
+  "name": "Gneis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
