@@ -1,26 +1,29 @@
 const habitacionmodel = require('../models/habitacion.model');
+
 class HabitacionService {
 
     HabitacionService() {}
 
-    guardarhabitacion(habitacion = new habitacionmodel()) {
-        habitacionmodel.create(habitacion).then((habitacionbd) => {
-            console.log(habitacionbd);
-        }).catch((error) => {
-            console.log(error);
-        })
+    async guardarhabitacion(habitacion = new habitacionmodel()) {
+        try {
+            habitacionmodel.create(habitacion);
 
-        // const habitacion = new habitacionmodel(habitacion)
-        // habitacion.save()
+        } catch (error) {
+            console.log(error);
+
+        }
     }
 
-    async consultarhabitaciones() {
+    // guardarhabitacion(habitacion = new habitacionmodel()) {
+    //     habitacionmodel.create(habitacion).then((habitacionbd) => {
+    //         console.log(habitacionbd);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
 
-        // await habitacionmodel.find().then((listahabiaciones) => {
-        //     return listahabiaciones;
-        // }).catch((error) => {
-        //     console.log(error);
-        // })
+    // }
+
+    async consultarhabitaciones() {
 
         try {
             return await habitacionmodel.find();
@@ -34,7 +37,7 @@ class HabitacionService {
     async eliminarhabitacion(idh) {
         try {
             await habitacionmodel.findOneAndRemove({
-                idhabitacion: idh
+                nombre: idh
             })
         } catch (error) {
             console.log(error);
@@ -44,7 +47,7 @@ class HabitacionService {
     async modificarhabitacion(habitacionmod) {
         try {
             await habitacionmodel.findOneAndUpdate({
-                idhabitacion: habitacionmod.idhabitacion
+                nombre: habitacionmod.nombre
             }, habitacionmod)
         } catch (error) {
             console.log(error);

@@ -1,5 +1,6 @@
 export class habitacion{
-    idhabitacion : string;
-    type : string;
+    id : string;
+    nombre : string;
+    tipo : string;
     costo : number;
 }

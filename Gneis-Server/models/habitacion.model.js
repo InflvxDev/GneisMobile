@@ -1,10 +1,9 @@
 const { Schema, model } = require('mongoose');
+
 const habitacionSchema = new Schema({
-    idhabitacion: String,
+    nombre: String,
     tipo: String,
     costo: Number,
-
-
 });
 
 

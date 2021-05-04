@@ -4,7 +4,8 @@ const server = require('http').createServer(app);
 const cors = require('cors');
 const mongose = require('mongoose');
 require('dotenv').config();
-// 
+
+
 try {
     mongose.connect(process.env.CONECTIONDB, {
         useCreateIndex: true,
@@ -22,6 +23,7 @@ try {
 app.use(express.json())
 app.use(cors());
 app.use('/habitacion', require('./routes/habitacion.routes'));
+
 
 server.listen(3000, (error) => {
     if (error) throw new Error(error);

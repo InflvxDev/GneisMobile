@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HabitacionService } from '../../services/habitacion.service';
+import { habitacion } from '../../class/habitacion';
 
 @Component({
   selector: 'app-habitacioneslist',
@@ -7,12 +8,21 @@ import { HabitacionService } from '../../services/habitacion.service';
   styleUrls: ['./habitacioneslist.page.scss'],
 })
 export class HabitacioneslistPage implements OnInit {
-
+habitaciones: habitacion[];
   constructor(private habitacionservice : HabitacionService) { 
-    habitacionservice.get();
+    this.habitacionservice.habitaciones$.subscribe((res)=>{
+      this.habitaciones = res;
+    })
+    
   }
 
   ngOnInit() {
   }
+
+  delete(idh){
+    this.habitacionservice.delete(idh);
+  }
+
+ 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { habitacion } from '../../class/habitacion';
+import { HabitacionService } from '../../services/habitacion.service';
 
 @Component({
   selector: 'app-habitacionesreg',
@@ -8,7 +9,7 @@ import { habitacion } from '../../class/habitacion';
 })
 export class HabitacionesregPage implements OnInit {
   habitacion: habitacion; 
-  constructor() { 
+  constructor(private habitacionService: HabitacionService) { 
     this.habitacion = new habitacion();
   }
 
@@ -17,7 +18,10 @@ export class HabitacionesregPage implements OnInit {
 
   addhabitacion(){
     console.log(this.habitacion);
+  this.habitacionService.post(this.habitacion);
     
   }
+
+ 
 
 }

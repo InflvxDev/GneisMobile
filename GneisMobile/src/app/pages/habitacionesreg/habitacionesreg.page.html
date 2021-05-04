@@ -13,14 +13,14 @@
     <form #formulario="ngForm" (ngSubmit)="addhabitacion()">
 
         <ion-item>
-            <ion-label position="floating" style="font-family: 'emily';">IDHabitacion: </ion-label>
-            <ion-input type="text" placeholder="H1" [(ngModel)]="habitacion.idhabitacion" name="idhabitacion" required></ion-input>
+            <ion-label position="floating" style="font-family: 'emily';">NombreHabitacion: </ion-label>
+            <ion-input type="text" placeholder="H1" [(ngModel)]="habitacion.nombre " name="nombre" required></ion-input>
         </ion-item>
 
 
         <ion-item>
             <ion-label position="floating" style="font-family: 'emily';">Type: </ion-label>
-            <ion-select [(ngModel)]="habitacion.type" name="type" required>
+            <ion-select [(ngModel)]="habitacion.tipo" name="tipo" required>
                 <ion-select-option>Simple</ion-select-option>
                 <ion-select-option>Doble</ion-select-option>
                 <ion-select-option>Triple</ion-select-option>
