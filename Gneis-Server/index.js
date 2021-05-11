@@ -23,7 +23,7 @@ try {
 app.use(express.json())
 app.use(cors());
 app.use('/habitacion', require('./routes/habitacion.routes'));
-
+app.use('/cliente', require('./routes/cliente.routes'));
 
 server.listen(3000, (error) => {
     if (error) throw new Error(error);

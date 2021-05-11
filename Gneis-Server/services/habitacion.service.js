@@ -6,7 +6,7 @@ class HabitacionService {
 
     async guardarhabitacion(habitacion = new habitacionmodel()) {
         try {
-            habitacionmodel.create(habitacion);
+            await habitacionmodel.create(habitacion);
 
         } catch (error) {
             console.log(error);
@@ -14,14 +14,6 @@ class HabitacionService {
         }
     }
 
-    // guardarhabitacion(habitacion = new habitacionmodel()) {
-    //     habitacionmodel.create(habitacion).then((habitacionbd) => {
-    //         console.log(habitacionbd);
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     })
-
-    // }
 
     async consultarhabitaciones() {
 

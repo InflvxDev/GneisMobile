@@ -12,6 +12,10 @@ export class HabitacionService {
     
    }
 
+  firstget(){
+    return this.http.get('http://localhost:3000/habitacion');
+   }
+
 
   get(){
     return this.http.get('http://localhost:3000/habitacion').subscribe((res:any)=>{

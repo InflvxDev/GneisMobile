@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { cliente } from '../../class/cliente';
+import { ClienteService } from '../../services/cliente.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-clientereg',
@@ -8,7 +10,7 @@ import { cliente } from '../../class/cliente';
 })
 export class ClienteregPage implements OnInit {
   cliente: cliente;
-  constructor() { 
+  constructor(private clienteService: ClienteService,public alertController: AlertController) { 
     this.cliente = new cliente ();
   }
 
@@ -17,6 +19,22 @@ export class ClienteregPage implements OnInit {
 
   addcliente(){
     console.log(this.cliente);
+    this.clienteService.post(this.cliente);
+    this.presentAlert();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Proceso Exitoso',
+      message: 'el cliente se creo correctamente',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 
 }

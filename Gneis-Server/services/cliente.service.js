@@ -1,4 +1,3 @@
-const clienteModel = require('../models/cliente.model');
 const clientemodel = require('../models/cliente.model');
 
 class ClienteService {

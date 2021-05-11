@@ -10,13 +10,22 @@ import { habitacion } from '../../class/habitacion';
 export class HabitacioneslistPage implements OnInit {
 habitaciones: habitacion[];
   constructor(private habitacionservice : HabitacionService) { 
-    this.habitacionservice.habitaciones$.subscribe((res)=>{
-      this.habitaciones = res;
+   
+    this.get();
+  }
+
+  ngOnInit() {
+    this.habitacionservice.firstget().subscribe((res:any)=>{
+      this.habitaciones = res.habitaciones;
+      
     })
     
   }
 
-  ngOnInit() {
+  get(){
+    this.habitacionservice.habitaciones$.subscribe((res)=>{
+      this.habitaciones = res;
+    })
   }
 
   delete(idh){
