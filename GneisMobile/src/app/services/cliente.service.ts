@@ -12,24 +12,24 @@ export class ClienteService {
    }
 
   firstget(){
-    return this.http.get('http://localhost:3000/cliente');
+    return this.http.get('http://192.168.1.13:3000/cliente');
    }
 
 
   get(){
-    return this.http.get('http://localhost:3000/cliente').subscribe((res:any)=>{
+    return this.http.get('http://192.168.1.13:3000/cliente').subscribe((res:any)=>{
       this.clientes$.emit(res.clientes);
     })
   }
 
   post(cliente: cliente){
-    return this.http.post('http://localhost:3000/cliente', cliente).subscribe((res:any)=>{
+    return this.http.post('http://192.168.1.13:3000/cliente', cliente).subscribe((res:any)=>{
       this.clientes$.emit(res.clientes);
     })
   }
 
   delete(idh){
-    return this.http.delete('http://localhost:3000/cliente/'+idh).subscribe((res:any)=>{
+    return this.http.delete('http://192.168.1.13:3000/cliente/'+idh).subscribe((res:any)=>{
       this.clientes$.emit(res.clientes);
     })
   }

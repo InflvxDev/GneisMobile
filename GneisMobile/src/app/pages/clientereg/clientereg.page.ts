@@ -20,21 +20,21 @@ export class ClienteregPage implements OnInit {
   addcliente(){
     console.log(this.cliente);
     this.clienteService.post(this.cliente);
-    this.presentAlert();
+    // this.presentAlert();
   }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Proceso Exitoso',
-      message: 'el cliente se creo correctamente',
-      buttons: ['OK']
-    });
+  // async presentAlert() {
+  //   const alert = await this.alertController.create({
+  //     cssClass: 'my-custom-class',
+  //     header: 'Proceso Exitoso',
+  //     message: 'el cliente se creo correctamente',
+  //     buttons: ['OK']
+  //   });
 
-    await alert.present();
+  //   await alert.present();
 
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
+  //   const { role } = await alert.onDidDismiss();
+  //   console.log('onDidDismiss resolved with role', role);
+  // }
 
 }

@@ -19,7 +19,7 @@ try {
     throw new Error(error);
 
 }
-
+//confi
 app.use(express.json())
 app.use(cors());
 app.use('/habitacion', require('./routes/habitacion.routes'));
