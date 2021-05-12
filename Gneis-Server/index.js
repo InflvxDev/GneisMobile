@@ -2,30 +2,18 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const cors = require('cors');
-const mongose = require('mongoose');
+
 require('dotenv').config();
+require('./class/DB_CONECTION').dbConection();
 
 
-try {
-    mongose.connect(process.env.CONECTIONDB, {
-        useCreateIndex: true,
-        useFindAndModify: false,
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
 
-} catch (error) {
-
-    throw new Error(error);
-
-}
-//confi
 app.use(express.json())
 app.use(cors());
 app.use('/habitacion', require('./routes/habitacion.routes'));
 app.use('/cliente', require('./routes/cliente.routes'));
 
-server.listen(3000, (error) => {
+server.listen(process.env.PORT, (error) => {
     if (error) throw new Error(error);
     console.log("server on");
 });

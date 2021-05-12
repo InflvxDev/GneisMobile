@@ -10,14 +10,12 @@ import { ClienteService } from '../../services/cliente.service';
 export class ClientelistPage implements OnInit {
 clientes : cliente[];
   constructor(private ClienteService: ClienteService) { 
-    this.get()
+    
   }
 
   ngOnInit() {
-    this.ClienteService.firstget().subscribe((res:any)=>{
-      this.clientes = res.clientes;
-      console.log(this.clientes);
-    })
+    this.ClienteService.get();
+    this.get();
   }
 
   get(){
