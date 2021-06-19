@@ -24,7 +24,7 @@ export class HabitacionesregPage implements OnInit {
   this.habitacion.tipo = "";
   this.habitacion.costo = null;
   
-  // this.presentAlert();    
+  this.presentAlert();    
     
   }
 

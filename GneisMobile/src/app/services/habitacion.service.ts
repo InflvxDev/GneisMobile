@@ -31,5 +31,11 @@ export class HabitacionService {
     })
   }
 
+  update(habitacionModificada : habitacion){
+    return this.http.put(this.baseurl, habitacionModificada).subscribe((res:any)=>{
+      this.habitaciones$.emit(res.habitaciones);
+    })
+  }
+
 
 }

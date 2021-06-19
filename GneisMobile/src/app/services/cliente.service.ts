@@ -32,4 +32,10 @@ export class ClienteService {
       this.clientes$.emit(res.clientes);
     })
   }
+
+  update(clienteModificado: cliente){
+    return this.http.put(this.baseurl,clienteModificado).subscribe((res:any)=>{
+      this.clientes$.emit(res.clientes)
+    })
+  }
 }

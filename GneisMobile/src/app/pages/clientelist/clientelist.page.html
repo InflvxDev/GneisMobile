@@ -1,19 +1,22 @@
 <ion-header>
     <ion-toolbar color="gneis">
         <ion-buttons slot="start">
-            <ion-back-button color="light" defaultHref='/'></ion-back-button>
+            <ion-back-button color="light" defaultHref="/"></ion-back-button>
         </ion-buttons>
         <ion-title style="text-align: center; color: white; font-family: 'emily'">CLIENTES</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-title style="text-align: center; color: #00BFA6; font-family: 'emily'; padding-top: 20px;">Listado Clientes</ion-title>
+    <ion-title style="
+      text-align: center;
+      color: #00bfa6;
+      font-family: 'emily';
+      padding-top: 20px;
+    ">Listado Clientes</ion-title>
 
     <ion-list #lista>
-
         <ion-item-sliding *ngFor="let a of clientes">
-
             <ion-item>
                 <ion-label slot="start">
                     <h3>Cedula: {{a.cedula}}</h3>
@@ -21,25 +24,20 @@
                     <p>Telefono: {{a.telefono}}</p>
                     <p>Correo: {{a.correo}}</p>
                 </ion-label>
-                <ion-label text-right>
-                    Edad: {{a.edad}} Sexo: {{a.sexo}}
-                </ion-label>
+                <ion-label text-right> Edad: {{a.edad}} Sexo: {{a.sexo}} </ion-label>
             </ion-item>
 
             <ion-item-options side="start">
                 <ion-item-option color="secondary">
-                    <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+                    <ion-icon slot="icon-only" name="create-outline" (click)="presentAlertPrompt(a)"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
 
             <ion-item-options side="end">
                 <ion-item-option color="danger">
-                    <ion-icon slot="icon-only" name="trash" (click)="delete(a.cedula) "></ion-icon>
+                    <ion-icon slot="icon-only" name="trash" (click)="delete(a.cedula)"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
-
         </ion-item-sliding>
-
     </ion-list>
-
 </ion-content>
